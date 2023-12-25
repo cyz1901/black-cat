@@ -1,4 +1,4 @@
-import { Chart, initTE, Sidenav } from "tw-elements";
+import "preline/preline";
 
 class TWE {
   init() {

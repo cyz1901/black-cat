@@ -20,7 +20,7 @@ export default ({ mode }) => {
         webapp: resolve(__dirname, "./modules/frontend/src/main/webapp"),
         mxml: resolve(__dirname, "./modules/frontend/static/mxml"),
         js: resolve(__dirname, "./modules/frontend/js"),
-        "#": resolve(__dirname, "./node_modules"),
+        "@": resolve(__dirname, "./node_modules"),
       },
     },
     plugins: [
