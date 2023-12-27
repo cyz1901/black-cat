@@ -40,7 +40,8 @@ lazy val frontend =
         Dependencies.calico.value,
         Dependencies.scalaJsDom.value,
         Dependencies.frontrouteCalico.value
-      )
+      ),
+      stIgnore ++= List("@material-tailwind/html")
     )
 
   lazy val backend =

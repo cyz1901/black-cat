@@ -28,7 +28,7 @@ object RootPage {
         div(
           cls := "w-[64px] bg-[#F5F3F7] p-6 flex flex-col items-center gap-4 border-r-2 border-white",
           button(
-            cls := "hs-tooltip-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
+            cls := "w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
             span(
               cls := "icon-[uil--database] w-8 h-8 bg-[#878787]"
             ),

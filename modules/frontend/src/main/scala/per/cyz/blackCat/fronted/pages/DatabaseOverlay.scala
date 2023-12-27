@@ -15,12 +15,46 @@ import frontroute.*
 import frontroute.given
 
 object DatabaseOverlay {
-  def root(): Resource[IO, HtmlElement[IO]] = div(
-    idAttr := "hs-unstyled-modal",
-    cls := "hs-overlay hidden w-full h-full fixed top-0 start-0 z-[60] overflow-x-hidden overflow-y-auto",
+  def root(): Resource[IO, HtmlElement[IO]] = IO {
+    println(org.scalajs.dom.window.navigator.appVersion)
+  }.toResource *> div(
+    cls := "flex flex-col h-screen w-screen",
     div(
-      cls := "hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto",
-      "Modal content"
+      cls := "h-16 bg-[#F5F3F7] border-b-2 border-white flex flex-row items-center",
+      button(
+        cls := "w-[2.375rem] h-[2.375rem] text-sm ml-4 font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
+        span(
+          cls := "icon-[uil--angle-left-b] w-8 h-8 bg-[#878787]"
+        ),
+        onClick --> (_.foreach(_ => BrowserNavigation.replaceState(url = "/root")))
+      )
+    ),
+    div(
+      cls := "flex flex-row bg-[#F5F3F7] h-screen w-screen",
+      div(
+        cls := "w-16 bg-[#F5F3F7] border-r-2 border-white flex flex-col items-center mt-4 gap-y-2",
+        button(
+          cls := "w-[2.375rem] h-[2.375rem] text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
+          span(
+            cls := "text-[#878787]",
+            "My"
+          )
+        ),
+        button(
+          cls := "w-[2.375rem] h-[2.375rem] text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
+          span(
+            cls := "text-[#878787]",
+            "RDB"
+          )
+        ),
+        button(
+          cls := "w-[2.375rem] h-[2.375rem] text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-[#E9E4ED] disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-[#8B5FBF]",
+          span(
+            cls := "text-[#878787]",
+            "NoSQL"
+          )
+        )
+      )
     )
   )
 }

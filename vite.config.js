@@ -26,6 +26,7 @@ export default ({ mode }) => {
     plugins: [
       createHtmlPlugin({
         minify: mode === "production",
+        viteNext: true,
         inject: {
           data: {
             script,
