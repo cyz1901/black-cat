@@ -14,6 +14,8 @@ import fs2.dom.*
 import frontroute.*
 import frontroute.given
 
+import per.cyz.blackCat.fronted.components.*
+
 object DatabaseOverlay {
   def root(): Resource[IO, HtmlElement[IO]] = IO {
     println(org.scalajs.dom.window.navigator.appVersion)
@@ -53,7 +55,8 @@ object DatabaseOverlay {
             cls := "text-[#878787]",
             "NoSQL"
           )
-        )
+        ),
+        BcSideButton(())
       )
     )
   )
