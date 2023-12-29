@@ -12,13 +12,16 @@ import fs2.*
 import fs2.concurrent.*
 import fs2.dom.*
 
-object BcSideButton {
-  def apply[M](mods: M, name: String)(using Modifier[IO, HtmlButtonElement[IO], M]) =
+object BcLinkButton {
+  def apply[M](mods: M, icon: String, detail: String)(using Modifier[IO, HtmlButtonElement[IO], M]) =
     button(
-      cls := "w-full h-8",
+      cls := "w-full h-6 flex flex-row justify-between items-center mx-2",
+      span(
+        cls := s"$icon w-4 h-4 bg-[#878787]"
+      ),
       span(
         cls := "text-[#878787]",
-        name
+        detail
       )
     ).flatTap(_.modify(mods))
 }

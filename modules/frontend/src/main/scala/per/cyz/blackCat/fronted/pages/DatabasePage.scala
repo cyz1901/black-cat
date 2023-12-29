@@ -16,6 +16,7 @@ import frontroute.given
 
 import scala.scalajs.js
 import org.scalajs.dom
+import per.cyz.blackCat.fronted.plugin.PostrageSQLPage
 
 object DatabasePage {
   def root(): Resource[IO, HtmlElement[IO]] =
@@ -30,6 +31,11 @@ object DatabasePage {
               cls := "icon-[mdi--add] w-4 h-4 bg-[#878787]"
             ),
             onClick --> (_.foreach(_ => BrowserNavigation.pushState(url = "/addDatabase")))
+          )
+        ),
+        ul(
+          li(
+            PostrageSQLPage.linkButton
           )
         )
       )

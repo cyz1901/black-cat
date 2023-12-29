@@ -38,7 +38,7 @@
     "vite-plugin-require-transform": "^1.0.21"
   },
   "dependencies": {
-    "ag-grid-community": "^31.0.1",
-    "codemirror": "^6.0.1"
+    "codemirror": "^6.0.1",
+    "datatables.net-dt": "^1.13.8"
   }
 }

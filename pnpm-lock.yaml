@@ -5,12 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  ag-grid-community:
-    specifier: ^31.0.1
-    version: 31.0.1
   codemirror:
     specifier: ^6.0.1
     version: 6.0.1(@lezer/common@1.1.2)
+  datatables.net-dt:
+    specifier: ^1.13.8
+    version: registry.npmmirror.com/datatables.net-dt@1.13.8
 
 devDependencies:
   '@iconify-json/mdi':
@@ -347,10 +347,6 @@ packages:
       '@tauri-apps/cli-win32-ia32-msvc': registry.npmmirror.com/@tauri-apps/cli-win32-ia32-msvc@2.0.0-alpha.15
       '@tauri-apps/cli-win32-x64-msvc': registry.npmmirror.com/@tauri-apps/cli-win32-x64-msvc@2.0.0-alpha.15
     dev: true
-
-  /ag-grid-community@31.0.1:
-    resolution: {integrity: sha512-RZQlW1DTOJHsUR/tnbnTJQKgAnDlHi05YYyTe5AgNor/1TlX1hoYdcqrGsJjvcHQgTjeEgzWOL0yf+KcqXZzxg==}
-    dev: false
 
   /ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
@@ -1939,6 +1935,23 @@ packages:
       - postcss
     dev: true
 
+  registry.npmmirror.com/datatables.net-dt@1.13.8:
+    resolution: {integrity: sha512-/ZPzr1hQ+domerlg/MbcQHqeeqxK9fsZmpRs1YeKxsdfr+UyHQTUiiOO7RqekppSLc7MPqxGnzKkCX9vAgqm0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/datatables.net-dt/-/datatables.net-dt-1.13.8.tgz}
+    name: datatables.net-dt
+    version: 1.13.8
+    dependencies:
+      datatables.net: registry.npmmirror.com/datatables.net@1.13.8
+      jquery: registry.npmmirror.com/jquery@3.7.1
+    dev: false
+
+  registry.npmmirror.com/datatables.net@1.13.8:
+    resolution: {integrity: sha512-2pDamr+GUwPTby2OgriVB9dR9ftFKD2AQyiuCXzZIiG4d9KkKFQ7gqPfNmG7uj9Tc5kDf+rGj86do4LAb/V71g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/datatables.net/-/datatables.net-1.13.8.tgz}
+    name: datatables.net
+    version: 1.13.8
+    dependencies:
+      jquery: registry.npmmirror.com/jquery@3.7.1
+    dev: false
+
   registry.npmmirror.com/dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dom-serializer/-/dom-serializer-1.4.1.tgz}
     name: dom-serializer
@@ -2165,6 +2178,12 @@ packages:
       filelist: registry.npmmirror.com/filelist@1.0.4
       minimatch: registry.npmmirror.com/minimatch@3.1.2
     dev: true
+
+  registry.npmmirror.com/jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jquery/-/jquery-3.7.1.tgz}
+    name: jquery
+    version: 3.7.1
+    dev: false
 
   registry.npmmirror.com/jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jsonfile/-/jsonfile-6.1.0.tgz}

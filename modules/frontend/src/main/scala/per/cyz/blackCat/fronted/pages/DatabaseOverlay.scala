@@ -56,7 +56,7 @@ object DatabaseOverlay {
             "NoSQL"
           )
         ),
-        BcSideButton(())
+        BcSideButton((), "hah")
       )
     )
   )

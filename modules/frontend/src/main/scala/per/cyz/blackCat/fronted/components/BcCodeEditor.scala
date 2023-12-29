@@ -12,13 +12,15 @@ import fs2.*
 import fs2.concurrent.*
 import fs2.dom.*
 
-object BcSideButton {
-  def apply[M](mods: M, name: String)(using Modifier[IO, HtmlButtonElement[IO], M]) =
-    button(
-      cls := "w-full h-8",
-      span(
-        cls := "text-[#878787]",
-        name
-      )
-    ).flatTap(_.modify(mods))
+import scala.scalajs.js
+import typings.codemirror.mod.*
+object BcCodeEditor {
+  def apply[M](mods: M)(using Modifier[IO, HtmlDivElement[IO], M]) = div(
+    cls := "w-full h-full"
+  ).flatTap(_.modify(mods))
+    .evalTap(_ =>
+      IO {
+        val editor = js.Dynamic.global.EditorView
+      }
+    )
 }
