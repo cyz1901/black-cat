@@ -14,13 +14,22 @@ import fs2.dom.*
 
 import scala.scalajs.js
 import typings.codemirror.mod.*
+
+import scala.scalajs.js.annotation.JSImport
 object BcCodeEditor {
+
   def apply[M](mods: M)(using Modifier[IO, HtmlDivElement[IO], M]) = div(
     cls := "w-full h-full"
   ).flatTap(_.modify(mods))
-    .evalTap(_ =>
+    .evalTap(r =>
       IO {
-        val editor = js.Dynamic.global.EditorView
+        import typings.codemirrorView.mod.*
+        import typings.codemirrorLangSql.mod.*
+        val editor = EditorView(config =
+          EditorViewConfig()
+            .setExtensions(js.Array(basicSetup, MSSQL))
+            .setParent(r.asInstanceOf[org.scalajs.dom.HTMLElement])
+        )
       }
     )
 }

@@ -55,9 +55,9 @@ object DatabaseOverlay {
             cls := "text-[#878787]",
             "NoSQL"
           )
-        ),
-        BcSideButton((), "hah")
-      )
+        )
+      ),
+      BcCodeEditor(())
     )
   )
 }

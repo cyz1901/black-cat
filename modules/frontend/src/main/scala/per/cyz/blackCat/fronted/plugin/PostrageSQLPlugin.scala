@@ -12,6 +12,7 @@ import fs2.*
 import fs2.concurrent.*
 import fs2.dom.*
 import per.cyz.blackCat.fronted.components.BcLinkButton
+import per.cyz.blackCat.fronted.components.BcCodeEditor
 
 class PostrageSQLPlugin extends AppPlugin {
 
@@ -28,9 +29,11 @@ class PostrageSQLPlugin extends AppPlugin {
 object PostrageSQLPage {
   val linkButton = BcLinkButton(
     (),
-    icon = "icon-[mdi--add]",
-    detail = "2021"
+    icon = "icon-[devicon--postgresql]", // devicon:postgresql-wordmark
+    detail = "postgresql"
   )
 
-  def root(): Resource[IO, HtmlElement[IO]] = div("PostrageSQL")
+  def root(): Resource[IO, HtmlElement[IO]] = div("PostrageSQL", BcCodeEditor(()))
+
+  def connectPage(): Resource[IO, HtmlElement[IO]] = div(())
 }

@@ -38,15 +38,11 @@ object Dependencies {
     )
   }
 
-  val surrealdb: Def.Initialize[Seq[ModuleID]] = Def.setting {
+  val doobie: Def.Initialize[Seq[ModuleID]] = Def.setting {
     Seq(
-      "com.surrealdb" % "surrealdb-driver" % DependencyVersions.surrealdb
-    )
-  }
-
-  val langchain4j: Def.Initialize[Seq[ModuleID]] = Def.setting {
-    Seq(
-      "dev.langchain4j" % "langchain4j" % DependencyVersions.langchain4j
+      "org.tpolecat" %% "doobie-core" % DependencyVersions.doobie,
+      "org.tpolecat" %% "doobie-postgres" % DependencyVersions.doobie,
+      "org.tpolecat" %% "doobie-specs2" % DependencyVersions.doobie
     )
   }
 }
