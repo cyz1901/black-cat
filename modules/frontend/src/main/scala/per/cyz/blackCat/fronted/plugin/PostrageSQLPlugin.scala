@@ -33,7 +33,17 @@ object PostrageSQLPage {
     detail = "postgresql"
   )
 
-  def root(): Resource[IO, HtmlElement[IO]] = div("PostrageSQL", BcCodeEditor(()))
+  def root(): Resource[IO, HtmlElement[IO]] =
+    div(
+      cls := "flex flex-col justify-start",
+      div(
+        role := List("tablist"),
+        cls := "tabs tabs-boxed",
+        a(role := List("tab"), cls := "tab", "Tab 1"),
+        a(role := List("tab"), cls := "tab tab-active", "Tab 2"),
+        a(role := List("tab"), cls := "tab", "Tab 3")
+      )
+    )
 
   def connectPage(): Resource[IO, HtmlElement[IO]] = div(())
 }

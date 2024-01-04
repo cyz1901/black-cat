@@ -25,7 +25,7 @@ object DatabasePage {
       div(
         cls := "flex flex-col w-[128px] h-full bg-[#F5F3F7] border-r-2 border-white",
         div(
-          cls := "flex flex-row w-full h-[32px] items-center justify-end bg-slate-200 mr-2",
+          cls := "flex flex-row w-full h-[32px] items-center justify-end bg-slate-200 pr-2",
           button(
             span(
               cls := "icon-[mdi--add] w-4 h-4 bg-[#878787]"
@@ -38,6 +38,7 @@ object DatabasePage {
             PostrageSQLPage.linkButton
           )
         )
-      )
+      ),
+      PostrageSQLPage.root()
     )
 }
